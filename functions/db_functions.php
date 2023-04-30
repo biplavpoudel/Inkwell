@@ -23,7 +23,7 @@
                 echo "Cannot retrieve data ! " . mysqli_error($conn);
                 exit;
             }
-            for ($i=0; $i<4; $i++){
+            for ($i=0; $i<6; $i++){
                 array_push($row, mysqli_fetch_assoc($result));  //concatenates result as an associative array to $row
             }
             return $row;
