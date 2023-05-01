@@ -14,8 +14,8 @@
     }
 
 //Function to select any four latest books out of the database
-    if (!function_exists("select4books")){
-        function select4books($conn){
+    if (!function_exists("select6books")){
+        function select6books($conn){
             $row = array();  //we create an anrray called row
             $query = "SELECT book_isbn, book_image FROM books ORDER BY book_isbn DESC";
             $result = mysqli_query($conn, $query);
