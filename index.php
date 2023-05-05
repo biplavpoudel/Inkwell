@@ -11,14 +11,14 @@
 
 <br/> <br/>
 
-    <div class="container">
+    <div class="container" style="padding-bottom: 50px; margin-bottom:50px;">
       <p class="lead text-center text-muted">OUR LATEST BOOKS</p>
       <br><br>
-      <div class="d-flex justify-content-center" >
+      <div class="d-flex justify-content-center">
         <?php foreach($row as $book) { ?>
-      	<div class="col-md-2">
+      	<div class="col-md-2 col-sm-2">
       		<a href="book.php?bookisbn=<?php echo $book['book_isbn']; ?>">
-           <img class="img-responsive img-thumbnail" style="height: 260px; width:100%;" src="./bootstrap/img/<?php echo $book['book_image']; ?>">
+           <img class="img-responsive img-thumbnail" style="height: 260px; ;" src="./bootstrap/img/<?php echo $book['book_image']; ?>">
           </a>
       	</div>
         <?php } ?>

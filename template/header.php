@@ -26,7 +26,7 @@
 
 <body>
 
-<nav class="navbar navbar-light navbar-fixed-top"  style="background-color: #e3f2fd;" >
+<nav class="navbar navbar-light navbar-fixed-top"  style="background-color: white;" >
       <div class="container">
         <div class="navbar-header" >
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
