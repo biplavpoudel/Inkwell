@@ -156,12 +156,32 @@ input[type=text]:focus, input[type=password]:focus {
               <div class="form-outline mb-4">
               <label class="form-label" for="exampleInputEmail1">Email</label>
               <input type="email" class="form-control form-control-lg" placeholder="Enter your email" name="email"/>
-              <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <!-- <small class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+              <?php
+                if (isset($_SESSION['email_msg']))
+                {
+                  echo '<p style="color: red; font-size: small;">'.$_SESSION['email_msg'].'</p>';
+                  unset ($_SESSION['email_msg']);
+                }
+                else
+                {
+                  echo '<small class="form-text text-muted">'."We'll never share your email with anyone else.".'</small>';
+                }
+              ?>
               </div>
                 <br>
               <div class="form-outline mb-4">
               <label class="form-label" for="exampleInputPassword1">Password</label>
               <input type="password"  class="form-control form-control-lg" placeholder="Enter your password" name="password"/>
+              <p style="color: red; font-size: small;">
+                <?php
+                  if (isset($_SESSION['pwd_msg']))
+                  {
+                    echo $_SESSION['pwd_msg'];
+                    unset ($_SESSION['pwd_msg']);
+                  }
+                ?>
+              </p>
               </div>
 
               <div class="form-check">
@@ -177,26 +197,18 @@ input[type=text]:focus, input[type=password]:focus {
 
               <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
               <p>Don't have an account? <a href="signup.php" class="link-info" style="color:blueviolet;">Register here</a></p>
+              <p style="color: red; font-size: small;">
+                <?php
+                  if (isset($_SESSION['msg']))
+                  {
+                    echo $_SESSION['msg'];
+                    unset ($_SESSION['msg']);
+                  }
+                ?>
+              </p>
             </form>
     </div>
 </div>
-
-<!-- Form Validation 😑 -->
-<?php
-    $fullurl="http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";  //http://localhost/Inkwell/signin.php
-    if(strpos($fullurl,"signin=empty")==true){
-        echo '<p style="color:red">You did not fill in all the fields.</p>';
-        exit();
-    }
-    if(strpos($fullurl,"signin=invalidusername")==true){
-        echo '<p style="color:red">Username Does not exist.</p>';
-        exit();
-    }
-    if(strpos($fullurl,"signin=invalidpassword")==true){
-        echo '<p style="color:red">Password is not correct.</p>';
-        exit();
-    }
-?>
 
 
 <hr>

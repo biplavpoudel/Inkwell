@@ -1,6 +1,6 @@
 <?php
 	$title = "User SignUp";
-	require_once "./template/header.php";
+	require "./template/header.php";
 ?>
 
 <!-- For Icons -->
@@ -13,7 +13,7 @@
   background-image: url("./bootstrap/img/login1.jpg");
 
   /* Control the height of the image */
-  min-height: 700px;
+  min-height: 720px;
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -32,10 +32,9 @@
   padding: 16px;
   background-color:whitesmoke;
   padding-top:20px;
-  margin-top:70px;
+  margin-top:60px;
   opacity: 0.9;
   background-image: linear-gradient(to bottom, #A1BED2,#C9D9DA, #D2D8D0, white);
-  /* margin-bottom:15px; */
 }
 
 /* Full-width input fields */
@@ -90,6 +89,15 @@ input[type=text]:focus, input[type=password]:focus {
               <div class="form-group col-md-12">
                 <label for="inputEmail">Email</label>
                 <input type="email" class="form-control" name="email" placeholder="Email">
+                <p style="color:red; font-size:small;">
+                  <?php
+                      if (isset($_SESSION['msg2']))
+                      {
+                        echo $_SESSION['msg2'];
+                        unset ($_SESSION['msg2']);
+                      }
+                  ?>
+                </p>
               </div>
             </div>    
             <div class="form-row">
@@ -124,23 +132,18 @@ input[type=text]:focus, input[type=password]:focus {
             <button type="submit" class="btn btn-primary">Submit</button><br>
             <br>
             <p>Already have an account? <a href="signin.php" class="link-info" style="color:blueviolet;">Login here</a></p>
+            <p style="color:red; font-size:small;">
+              <?php
+                  if (isset($_SESSION['msg1']))
+                  {
+                    echo $_SESSION['msg1'];
+                    unset ($_SESSION['msg1']);
+                  }
+              ?>
+            </p>
         </form>
     </div>
 </div>
-
-<!-- Form Validation -->
-<!-- Can be improved hai -->
-<?php
-    $fullurl="http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";    //e.g. http://localhost/Inkwell/signup.php
-    if(strpos($fullurl,"signup=empty")==true){
-        echo '<p style="color:red">You did not fill in all the fields.</p>';                      //<------NOT WORKING ERROR MESSAGES
-        exit();
-    }
-    if(strpos($fullurl,"signup=invalidemail")==true){
-        echo '<p style="color:red">You did not enter a valid email address.</p>';                  //<------NOT WORKING ERROR MESSAGES
-        exit();
-    }
-?>
 
 <hr>
 <?php

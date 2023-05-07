@@ -2,6 +2,9 @@
     if (!isset($_SESSION)){
         session_start();
     }
+
+    $page = $_SERVER['PHP_SELF'];
+    $sec = "5";
     
     require_once "./functions/db_functions.php";
 
@@ -17,6 +20,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="<?php echo $sec?>;URL='<?php echo $page?>'"> -->
 
     <!-- Linking of Bootstrap and Jumbotron -->
     <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -62,8 +66,7 @@
               
               <?php 
                if(isset($_SESSION['user'])){
-                 echo ' <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>&nbsp; LogOut</a></li>'.'<li><a href="profile.php"><span class="glyphicon glyphicon-user"></span>&nbsp;'
-                 .$name.'</a></li>';
+                 echo ' <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>&nbsp; LogOut</a></li>'.'<li><a href="profile.php"><span class="glyphicon glyphicon-user"></span>&nbsp;'.$name.'</a></li>';
                }
                else{
                 echo ' <li><a href="signin.php"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Signin</a></li>'.'<li><a href="signup.php"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Sign up</a></li>';
