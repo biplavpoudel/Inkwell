@@ -82,30 +82,13 @@
 <body>
     
 
-<!-- Newletter -->
-<div class="jumbotron" style="background: url('./bootstrap/img/newsletter.jpg') no-repeat center center; background-size:cover; height:250px; margin-bottom:0px; padding-top:20px;" >
-      <div class= "container">
-        <div class="col-md-5 offset-md-1 mb-3">
-          <form>
-            <h3>Subscribe to our Newsletter</h3>
-            <h5>Monthly digest of what's new and exciting from us!</h5>
-            <br>
-            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-              <label for="newsletter1" class="visually-hidden">Email address</label>
-              <input id="newsletter1" type="text" class="form-control" placeholder="Email address"><br>
-              <button class="btn btn-primary" type="button">Subscribe</button>
-            </div>
-          </form>
-        </div>
-     </div>
-    </div>
 
 
 <!--Quicklinks  -->
 <div class="container-fluid" style="background-color: white; padding-top:15px; padding-left:200px;">
   <footer class="py-6">
     <div class="row">
-      <div class="col-6 col-md-2 mb-3">
+      <div class="col-6 col-md-2 mb-4">
         <h4>Quicklinks</h4>
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Book Requests</a></li>
@@ -116,7 +99,7 @@
         </ul>
       </div>
 
-      <div class="col-6 col-md-2 mb-3">
+      <div class="col-6 col-md-2 mb-4">
         <h4>About</h4>
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact Us</a></li>
@@ -127,7 +110,7 @@
         </ul>
       </div>
 
-      <div class="col-6 col-md-2 mb-3">
+      <div class="col-6 col-md-2 mb-4">
         <h4>Popular Genre</h4>
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Fiction</a></li>
@@ -138,7 +121,7 @@
         </ul>
       </div>
 
-      <div class="col-6 col-md-4 mb-3">
+      <div class="col-6 col-md-3 mb-4">
         <h4>Contact</h4>
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><span class="glyphicon glyphicon-home"></span>&nbsp;Pokhara, Nepal</a></li>

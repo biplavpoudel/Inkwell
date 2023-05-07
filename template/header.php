@@ -26,7 +26,7 @@
 
 <body>
 
-<nav class="navbar navbar-light navbar-fixed-top"  style="background-color: white;" >
+<nav class="navbar navbar-light navbar-fixed-top"  style="background-color:aliceblue;" >
       <div class="container">
         <div class="navbar-header" >
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -39,7 +39,7 @@
           <div style="width: 400px; ">
           <div class="row">
             <!-- Image and text -->
-            <a class="navbar-brand" href="#"><img src="./bootstrap/logo/logo.png" width="100%" height="150%" class="d-inline-block align-top" alt=""></a>
+            <a class="navbar-brand" href="index.php"><img src="./bootstrap/logo/logo.png" width="100%" height="150%" class="d-inline-block align-top" alt=""></a>
             <form  method="post" action="search_book.php" class="col-md-4 form-inline" style="margin-top:7px; margin-left:5px; margin-bottom:5px;">
               <input type="text" class="form-control" id="inputPassword2" placeholder="Search for Books" name="text">
               <button type="submit" class="btn btn-primary mb-2" style="display:none"></button>
@@ -81,7 +81,7 @@
       if(isset($title) && $title == "Index") {
     ?>
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron" style="background: url('./bootstrap/img/library2.jpg') no-repeat center center; background-size: cover;height:400px;" >
+    <div class="jumbotron" style="background: url('./bootstrap/img/jumbotron1.png') no-repeat center center; background-size: cover;height:400px;" >
       <div class="container">
         <img src="./bootstrap/logo/logo.png" style="margin-left:auto; margin-right:auto; display:block; width:30%; margin-top:10px;"></img>
         <h1 style="text-align:center; margin:5% auto; ;"><marquee>WELCOME TO THE INKWELL</marquee></h1>   
