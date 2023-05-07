@@ -59,13 +59,14 @@
               <li class="nav-item"><a href="books.php"><span class="glyphicon glyphicon-book"></span>&nbsp; Books</a></li>
               <!-- link to shopping cart -->
               <li class="nav-item"><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp; My Cart</a></li>
+              
               <?php 
                if(isset($_SESSION['user'])){
-                 echo ' <li><a href="logout.php"><span class="	glyphicon glyphicon-log-out"></span>&nbsp; LogOut</a></li>'.'<li><a href="profile.php"><span class="glyphicon glyphicon-user"></span>&nbsp;'
-                 .$name.
-                 '</a></li>';
-               }else{
-                echo ' <li><a href="signin.php"><span class="	glyphicon glyphicon-log-in"></span>&nbsp; Signin</a></li>'.'<li><a href="signup.php"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Sign up</a></li>';
+                 echo ' <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>&nbsp; LogOut</a></li>'.'<li><a href="profile.php"><span class="glyphicon glyphicon-user"></span>&nbsp;'
+                 .$name.'</a></li>';
+               }
+               else{
+                echo ' <li><a href="signin.php"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Signin</a></li>'.'<li><a href="signup.php"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Sign up</a></li>';
                }
 
               ?>

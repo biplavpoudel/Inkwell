@@ -73,7 +73,7 @@ input[type=text]:focus, input[type=password]:focus {
 
 <div class="container-fluid-lg">
     <div class="bg-img">
-        <form action="user_verify.php" class="container1">
+        <form action="user_signup.php" class="container1" method="post">
             <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px; padding-left: 15px;">Register Your Account</h3>
             <br><br>
             <div class="form-row">
@@ -117,7 +117,7 @@ input[type=text]:focus, input[type=password]:focus {
               </div>
               <div class="form-group col-md-3">
                 <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" name="zip">
+                <input type="text" class="form-control" name="zipcode">
               </div>
             </div>
 
@@ -133,11 +133,11 @@ input[type=text]:focus, input[type=password]:focus {
 <?php
     $fullurl="http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";    //e.g. http://localhost/Inkwell/signup.php
     if(strpos($fullurl,"signup=empty")==true){
-        echo '<p style="color:red">You did not fill in all the fields.</p>';
+        echo '<p style="color:red">You did not fill in all the fields.</p>';                      //<------NOT WORKING ERROR MESSAGES
         exit();
     }
     if(strpos($fullurl,"signup=invalidemail")==true){
-        echo '<p style="color:red">You did not enter a valid email address.</p>';
+        echo '<p style="color:red">You did not enter a valid email address.</p>';                  //<------NOT WORKING ERROR MESSAGES
         exit();
     }
 ?>
