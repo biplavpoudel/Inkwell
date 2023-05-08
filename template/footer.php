@@ -85,7 +85,7 @@
 
 
 <!--Quicklinks  -->
-<div class="container-fluid" style="background-color: white; padding-top:15px; padding-left:200px;">
+<div class="container-fluid" style="background-color: white; padding-top:15px; padding-left:200px; line-height:0.8em;">
   <footer class="py-6">
     <div class="row">
       <div class="col-6 col-md-2 mb-4">

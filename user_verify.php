@@ -7,7 +7,7 @@
 	$pass = trim($_POST['password']);
 
 	if(empty($email) || empty($pass)){
-		// header("Location:../onlinebookstore/signin.php?signin=empty");/
+		// header("Location:signin.php?signin=empty");/
         $_SESSION['msg'] = "Email and Password fields are empty. Please enter again.";
         header("Location:signin.php");
 	}
@@ -57,6 +57,11 @@
 						unset($_SESSION['expert']);
 						header("Location: index.php");      //email session is set after customer logins
                     }
+					else
+					{
+						$_SESSION['msg'] = "Invalid credentials.";
+						header("Location:signin.php");
+					}
 				}
 			}
 		}

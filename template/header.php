@@ -43,7 +43,7 @@
           <div style="width: 400px; ">
           <div class="row">
             <!-- Image and text -->
-            <a class="navbar-brand" href="index.php"><img src="./bootstrap/logo/logo.png" width="100%" height="150%" class="d-inline-block align-top" alt=""></a>
+            <a class="navbar-brand" href="index.php"><img src="./bootstrap/logo/logo.png" width="100%" height="150%" class="d-inline-block align-top" alt="" style="filter:saturate(200%);filter:contrast(150%)"></a>
             <form  method="post" action="search_book.php" class="col-md-4 form-inline" style="margin-top:7px; margin-left:5px; margin-bottom:5px;">
               <input type="text" class="form-control" id="inputPassword2" placeholder="Search for Books" name="text">
               <button type="submit" class="btn btn-primary mb-2" style="display:none"></button>
@@ -66,7 +66,7 @@
               
               <?php 
                if(isset($_SESSION['user'])){
-                 echo ' <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>&nbsp; LogOut</a></li>'.'<li><a href="profile.php"><span class="glyphicon glyphicon-user"></span>&nbsp;'.$name.'</a></li>';
+                 echo ' <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>&nbsp; Logout</a></li>'.'<li><a href="profile.php"><span class="glyphicon glyphicon-user"></span>&nbsp;'.$name.'</a></li>';
                }
                else{
                 echo ' <li><a href="signin.php"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Signin</a></li>'.'<li><a href="signup.php"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Sign up</a></li>';

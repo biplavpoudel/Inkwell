@@ -81,72 +81,6 @@ input[type=text]:focus, input[type=password]:focus {
 
 <!-- Signin form -->
 
-<!-- <div class="container"> -->
-    <!-- <form  class="form-horizontal" method="post" action="user_verify.php">
-      <div class="form-group row">
-        <label for="exampleInputEmail1" class="col-sm-2 col-form-label">Username</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter your username" name="username">
-          <small class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Password</label>
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="password">
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-sm-10">
-          <button type="submit" class="btn btn-primary">Sign in</button>
-        </div>
-      </div>
-    </form> -->
-
-    <!-- <section class="vh-100">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-6 text-black"  style="margin-top:100px;">
-
-            <div class="px-5 ms-xl-4">
-              <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
-              <span class="h1 fw-bold mb-0">Logo</span>
-            </div>
-
-            <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
-
-              <form style="width: 23rem;">
-
-                <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
-
-                <div class="form-outline mb-4">
-                  <input type="email" id="form2Example18" class="form-control form-control-lg" />
-                  <label class="form-label" for="form2Example18">Email address</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                  <input type="password" id="form2Example28" class="form-control form-control-lg" />
-                  <label class="form-label" for="form2Example28">Password</label>
-                </div>
-
-                <div class="pt-1 mb-4">
-                  <button class="btn btn-info btn-lg btn-block" type="button">Login</button>
-                </div>
-
-                <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
-                <p>Don't have an account? <a href="#!" class="link-info">Register here</a></p>
-
-              </form>
-
-            </div>
-
-          </div>
-          <div class="col-sm-4  px-0 d-none d-sm-block">
-            <img src="./bootstrap/img/signin.jpg" alt="Login image" class="w-100 vh-100 float-left" style="object-fit:cover; object-position: left; height: 500px;">
-          </div>
-        </div>
-      </div>
-    </section> -->
 <div class="container-fluid-lg">
     <div class="bg-img">
 
@@ -192,7 +126,7 @@ input[type=text]:focus, input[type=password]:focus {
               </div>
                 <br>
               <div class="pt-1 mb-4">
-              <button class="btn btn-info btn-md" type="button">Login</button>
+              <button class="btn btn-info btn-md" type="submit">Login</button>
               </div>
 
               <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
