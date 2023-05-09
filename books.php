@@ -5,6 +5,7 @@
     include "./template/header.php";
 
     // For Sorting books according to title, price, author
+    // this code has no meaning unless the user clicks submit button in the below form
     if(isset($_POST['title']))
     {
         if(isset($_POST['asc'])){
@@ -56,7 +57,7 @@
     }
 ?>
 
-<!-- Now comes the HTML part -->
+<!-- Now comes the HTML part 🥱🥱 -->
 
 
 <?php
