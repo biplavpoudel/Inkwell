@@ -46,7 +46,17 @@
     {
         $query = "SELECT * FROM books";
     }
+
+    //Now lets run the query
+    $result = mysqli_query($conn, $query);
+
+    if(!isset($result)){
+        echo "Something went wrong !". mysqli_error($conn);
+        exit();
+    }
 ?>
+
+<!-- Now comes the HTML part -->
 
 
 <?php
