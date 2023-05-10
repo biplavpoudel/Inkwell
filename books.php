@@ -3,6 +3,7 @@
     require "./functions/db_functions.php";
     $conn = db_connect();
     include "./template/header.php";
+    $count = 0;
 
     // For Sorting books according to title, price, author
     // this code has no meaning unless the user clicks submit button in the below form
@@ -57,7 +58,62 @@
     }
 ?>
 
+<style>
+</style>
+
 <!-- Now comes the HTML part 🥱🥱 -->
+<div class="container" style="padding-top:30px;">
+  <p class="lead text-center text-muted">Full Catalogs of Books</p>
+  <h6 class="lead text-muted">Sort By:</h6>
+    
+  <form method="post" action="books.php">
+    <div class="checkbox">
+      <label><input type="checkbox" name="asc" >Ascending</label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" name="desc">Descending</label>
+    </div>
+    
+    <button type="submit" class="btn btn-outline-secondary" name="title">Title</button>
+    <button type="submit" class="btn btn-outline-secondary" name="price">Price</button>
+    <button type="submit" class="btn btn-outline-secondary" name="author">Author</button>
+    <button type="submit" class="btn btn-outline-secondary" name="clear">Clear</button>  
+  </form>
+
+  <br><br>
+  <?php for($i = 0; $i < mysqli_num_rows($result); $i++){ ?>
+      <div class="row">
+        <?php while($query_row = mysqli_fetch_assoc($result)){ ?>
+          <div class="col-md-3">
+            <a href="book.php?bookisbn=<?php echo $query_row['book_isbn']; ?>">
+              <img class="img-responsive img-thumbnail" src="./bootstrap/img/<?php echo $query_row['book_image']; ?>" style="height: 300px; ;">
+            </a>
+            <table>
+              <tr>
+                <td><strong style="text-transform:uppercase">  <?php echo $query_row['book_title']; ?></strong></td>
+              </tr>
+              <tr>
+              <td> <?php echo $query_row['book_author']; ?></td>
+              </tr>
+              <tr>
+              <td><strong>$<?php echo $query_row['book_price'];?></strong>  </td>
+              </tr>
+            </table>
+          </div>
+        <?php
+          $count++;
+          if($count >= 4){
+              $count = 0;
+              break;
+            }
+          } 
+        ?> 
+      </div>
+  <?php
+        }
+  ?>
+  <br><br>
+</div>
 
 
 <?php
