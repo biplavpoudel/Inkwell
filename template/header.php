@@ -28,7 +28,7 @@
     <link href="./bootstrap/css/jumbotron.css" rel="stylesheet">
   
 
-<body>
+<body style="padding-bottom:0px;">
 
 <nav class="navbar navbar-light navbar-fixed-top"  style="background-color:aliceblue;" >
       <div class="container">

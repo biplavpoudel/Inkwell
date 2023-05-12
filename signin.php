@@ -144,8 +144,6 @@ input[type=text]:focus, input[type=password]:focus {
     </div>
 </div>
 
-
-<hr>
 <?php
 	require_once "./template/footer.php";
 ?>
