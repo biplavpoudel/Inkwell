@@ -85,7 +85,7 @@
 
 
 <!--Quicklinks  -->
-<div class="container-fluid" style="background-color: aliceblue; padding-top:15px; padding-left:200px; line-height:0.8em;">
+<div class="container-fluid" style="background-color: aliceblue; padding-top:15px; padding-left:200px; line-height:0.8em;;">
   <footer class="py-6">
     <div class="row">
       <div class="col-6 col-md-2 mb-4">
@@ -135,9 +135,9 @@
     </div>
     </footer>
 </div>
-<hr>
+<!-- <hr> -->
 
-<div class="d-flex flex-column">
+<div class="d-flex flex-column" style="background-color:lightcyan;">
   <!-- <p>&copy; 2023 InkWell, Inc.  All rights reserved.</p> -->
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: biege;">

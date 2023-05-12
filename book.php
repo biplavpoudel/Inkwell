@@ -6,7 +6,7 @@
 
     $book_isbn = $_GET['bookisbn'];
 
-    $query = "SELECT book_descr, book_isbn, book_author, book_title, book_price, book_image, category_name FROM books JOIN category WHERE book_isbn = '$book_isbn'";    //use JOIN command here for books and category table
+    $query = "SELECT book_descr, book_isbn, book_author, book_title, book_price, book_image, category_name FROM books JOIN category WHERE book_isbn = '$book_isbn' AND books.categoryid = category.categoryid";    //use JOIN command here for books and category table
     $result = mysqli_query($conn, $query);
     if(!$result){
       echo "Can't retrieve data " . mysqli_error($conn);
@@ -20,6 +20,15 @@
     }
 ?>
 
+<style>
+  @media (max-width: 1200px) {
+    .container{
+        padding-top: 25px;
+        /* overflow-x: hidden; */
+    }
+}
+</style>
+
 <!-- have to figure out how to add genre ie category_name from category table -->
 <!-- By joining tables ???? JOIN? -->
 
@@ -28,7 +37,7 @@
 
     <div class="row">
       <div class="col-md-3 text-center">
-        <img class="img-responsive img-thumbnail" src="./bootstrap/img/<?php echo $row['book_image']; ?>?123">
+        <img class="img-responsive img-thumbnail" style="max-width:262px;" src="./bootstrap/img/<?php echo $row['book_image']; ?>?123">
       </div>
       <div class="col-md-8">
         <h4>Book Description</h4>
@@ -37,15 +46,12 @@
         <h4>Book Details</h4>
         <table class="table">
         	<?php foreach($row as $key => $value){
-            if($key == "book_descr" || $key == "book_image" || $key == "publisherid" || $key == "book_title" || $key == "cateogry_name"){
+            if($key == "book_descr" || $key == "book_image" || $key == "publisherid" || $key == "book_title"){      //we are not showing these fields so continue
               continue;
             }
             switch($key){
               case "book_isbn":
                 $key = "ISBN";
-                break;
-              case "book_title":
-                $key = "Title";
                 break;
               case "book_author":
                 $key = "Author";
@@ -59,8 +65,8 @@
             }
           ?>
           <tr>
-            <td><?php echo $key; ?></td>
-            <td><?php echo $value; ?></td>
+            <td style="border:none;"><?php echo $key; ?>:</td>
+            <td style="border:none;"><?php echo $value; ?></td>
           </tr>
           <?php 
             } 
@@ -75,3 +81,9 @@
      	</div>
     </div>
 </div>  
+<br>
+<br>
+<br>
+<?php
+  include "./template/footer.php";
+?>
