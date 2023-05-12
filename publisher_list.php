@@ -70,7 +70,7 @@
                 }
         ?>
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href="book_per_publisher.php?pubid=<?php  ?>"> 
+                <a href="book_per_publisher.php?pubid=<?php echo $pub_row['publisherid']  ?>"> 
                     <?php echo $pub_row['publisher_name'] ?>
                 </a>
               <span class="badge badge-primary badge-pill"><?php echo $count ?></span>

@@ -4,7 +4,7 @@
     $conn = db_connect();
     include "./template/header.php";
     $count = 0;
-    $pub_id = $_GET['pubid'];
+    $cat_id = $_GET['catid'];
 
     // For Sorting books according to title, price, author according to category
     // this code has no meaning unless the user clicks submit button in the below form
@@ -13,43 +13,43 @@
     if(isset($_POST['title']))
     {
         if(isset($_POST['asc'])){
-          $query = "SELECT * FROM books WHERE publisherid = $pub_id  order by book_title asc";   
+          $query = "SELECT * FROM books WHERE categoryid = $cat_id  order by book_title asc";   
         }
         else if(isset($_POST['desc'])){
-          $query = "SELECT * FROM books WHERE publisherid = $pub_id  order by book_title desc";
+          $query = "SELECT * FROM books WHERE categoryid = $cat_id  order by book_title desc";
         }
         else{
-          $query = "SELECT * FROM books WHERE publisherid = $pub_id ";
+          $query = "SELECT * FROM books WHERE categoryid = $cat_id ";
         }
     }
     else if(isset($_POST['price']))
     {
         if(isset($_POST['asc'])){
-          $query = "SELECT * FROM books WHERE publisherid = $pub_id  order by book_price asc";
+          $query = "SELECT * FROM books WHERE categoryid = $cat_id  order by book_price asc";
         }
         else if(isset($_POST['desc'])){
-          $query = "SELECT * FROM books WHERE publisherid = $pub_id  order by book_price desc";
+          $query = "SELECT * FROM books WHERE categoryid = $cat_id  order by book_price desc";
         }
         else{
-          $query = "SELECT * FROM books WHERE publisherid = $pub_id ";
+          $query = "SELECT * FROM books WHERE categoryid = $cat_id ";
         }
     }
     else if(isset($_POST['author']))
     {
         if(isset($_POST['asc'])){
-          $query = "SELECT * FROM books WHERE publisherid = $pub_id  order by book_author asc";
+          $query = "SELECT * FROM books WHERE categoryid = $cat_id  order by book_author asc";
     
         }
         else if(isset($_POST['desc'])){
-          $query = "SELECT * FROM books WHERE publisherid = $pub_id  order by book_author desc";
+          $query = "SELECT * FROM books WHERE categoryid = $cat_id  order by book_author desc";
         }
         else{
-          $query = "SELECT * FROM books WHERE publisherid = $pub_id ";
+          $query = "SELECT * FROM books WHERE categoryid = $cat_id ";
         }
     }
     else
     {
-        $query = "SELECT * FROM books WHERE publisherid = $pub_id  ";    //fixed finally
+        $query = "SELECT * FROM books WHERE categoryid = $cat_id  ";    //fixed finally
     }
 
     //Now lets run the query
@@ -66,10 +66,10 @@
 <div style="background-color:mintcream;">
 <!-- Now comes the HTML part 🥱🥱 -->
   <div class="container" style="padding-top:30px;">
-    <div class="lead text-center text-muted" style="background-color:gold; width:fit-content; display:inline ;">Publisher:
+    <div class="lead text-center text-muted" style="background-color:gold; width:fit-content; display:inline ;">Category:
          <span style="text-transform:uppercase;">
             <?php //$name=mysqli_fetch_assoc($result); echo $name['category_name'];  ?>
-            <?php echo getPubName($conn, $pub_id) ?>       <!-- just use function dumbass -->
+            <?php echo getCatName($conn, $cat_id) ?>       <!-- just use function dumbass -->
         </span> 
     </div> 
     <h5 class="text-muted">Sort By:</h5>

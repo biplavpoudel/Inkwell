@@ -6,7 +6,7 @@
 
     $book_isbn = $_GET['bookisbn'];
 
-    $query = "SELECT book_descr, book_isbn, book_author, book_title, book_price, book_image, category_name FROM books JOIN category WHERE book_isbn = '$book_isbn' AND books.categoryid = category.categoryid";    //use JOIN command here for books and category table
+    $query = "SELECT book_descr, book_isbn, book_author, book_title, book_price, book_image, publisher_name, category_name FROM books JOIN category ON books.categoryid = category.categoryid JOIN publisher ON books.publisherid = publisher.publisherid WHERE book_isbn = '$book_isbn' ";    //use JOIN command here for books and category table
     $result = mysqli_query($conn, $query);
     if(!$result){
       echo "Can't retrieve data " . mysqli_error($conn);
@@ -58,6 +58,9 @@
                 break;
               case "book_price":
                 $key = "Price";
+                break;
+              case "publisher_name":
+                $key = "Publisher";
                 break;
               case "category_name":
                 $key = "Genre";
