@@ -63,7 +63,7 @@
 <div style="background-color:mintcream;">
 <!-- Now comes the HTML part 🥱🥱 -->
   <div class="container" style="padding-top:30px;">
-    <p class="lead text-center text-muted">Full Catalogs of Books</p>
+    <p class="lead text-center text-muted" style="background-color:gold; width:fit-content; ;">Full Catalogs of Books</p>
     <h5 class="text-muted">Sort By:</h5>
 
     <form method="post" action="books.php">
@@ -86,7 +86,7 @@
             <div class="col-md-3">
               <br><br>
               <a href="book.php?bookisbn=<?php echo $query_row['book_isbn']; ?>">
-                <img class="img-responsive img-thumbnail" src="./bootstrap/img/<?php echo $query_row['book_image']; ?>" style="height: 300px; ;">
+                <img class="img-responsive img-thumbnail" src="./bootstrap/img/<?php echo $query_row['book_image']; ?>?1234" style="height: 300px; ;">
               </a>
               <table>
                 <tr>
