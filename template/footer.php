@@ -85,12 +85,13 @@
 
 <hr style="margin:0 0 1px 0">
 <!--Quicklinks  -->
-<div class="container-fluid" style="background-color: aliceblue; padding-top:30px; padding-left:200px; line-height:0.8em;;">
+<div class="container-flex" style="background-color: aliceblue; padding-top:30px; padding-left:200px; line-height:0.8em;">
   <footer class="py-6">
     <div class="row">
       <div class="col-6 col-md-2 mb-4">
-        <h4>Quicklinks</h4>
+        <!-- <h5 style="font-weight:bold;">Quicklinks</h5> -->
         <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a style="color:#712cf9; font-weight:bold; font-size:15px;">Quicklinks</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Book Requests</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Booksellers</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">New Arrivals</a></li>
@@ -100,8 +101,9 @@
       </div>
 
       <div class="col-6 col-md-2 mb-4">
-        <h4>About</h4>
+        <!-- <h5 style="font-weight:bold;">About</h5> -->
         <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a style="color:#712cf9; font-weight:bold; font-size:15px;">About</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact Us</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Careers</a></li>
@@ -111,8 +113,9 @@
       </div>
 
       <div class="col-6 col-md-2 mb-4">
-        <h4>Popular Genre</h4>
+        <!-- <h5 style="font-weight:bold;">Popular Genre</h5> -->
         <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a style="color:#712cf9; font-weight:bold; font-size:15px;">Popular Genre</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Fiction</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Self Help</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Business</a></li>
@@ -122,8 +125,9 @@
       </div>
 
       <div class="col-6 col-md-3 mb-4">
-        <h4>Contact</h4>
+        <!-- <h5 style="font-weight:bold;">Contact</h5> -->
         <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a style="color:#712cf9; font-weight:bold; font-size:15px;">Contact</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><span class="glyphicon glyphicon-home"></span>&nbsp;Pokhara, Nepal</a></li>
           <li class="nav-item mb-2"><a href="mailto: biplavpoudel764@gmail.com"" class="nav-link p-0 text-body-secondary"><span class="glyphicon glyphicon-envelope"></span>&nbsp;biplavpoudel764@gmail.com</a></li>
           <!-- <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"><span class="glyphicon glyphicon-phone"></span>&nbsp;+977-9869141978</a></li> -->
@@ -134,8 +138,7 @@
       </div>
     </div>
     </footer>
-</div>
-
+</div>  
 <hr style="margin:0 0 1px 0">
 
 <div class="d-flex flex-column" style="background-color:lightcyan;">
@@ -146,4 +149,5 @@
       <a class="text-white" href="https://github.com/biplavpoudel"> Biplav Poudel    <span class="flag-icon flag-icon-np flag-icon-circle"></span></a>
     </div>
     <!-- Copyright -->
+</div>
 </body>

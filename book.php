@@ -77,8 +77,7 @@
           ?>
         </table>
         <form method="post" action="cart.php">
-          <input type="hidden" name="bookisbn" value="<?php echo $book_isbn;?>">
-          
+          <input type="hidden" name="bookisbn" value="<?php echo $book_isbn;?>">         
           <input type="submit" value="Add to cart" name="cart" class="btn btn-info">
         </form>
      	</div>

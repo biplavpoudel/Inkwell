@@ -72,7 +72,7 @@ input[type=text]:focus, input[type=password]:focus {
 
 <div class="container-fluid-lg">
     <div class="bg-img">
-        <form action="user_signup.php" class="container1" method="post">
+        <form action="user_signup.php" class="container1" method="post" style="border-style:none ;">
             <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px; padding-left: 15px;">Register Your Account</h3>
             <br><br>
             <div class="form-row">
