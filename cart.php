@@ -109,11 +109,59 @@
         echo '<script language="javascript">'; echo 'alert("Your cart is empty! Add your favourite books to the cart.")';
         echo '</script>';
     }
+
+    // I don't know when this is used 😵😵
+
+    if(isset($_SESSION['user'])){    //this session is set in "user_verify.php"
+        $customer = getCustomerInfobyEmail($_SESSION['email']);
+        $customerid = $customer['id'];
+
+        $query = "SELECT * FROM cart join cartitems join books join customers
+            on customers.id='$customerid' and cart.customerid='$customerid' and cart.id=cartitems.cartid and  cartitems.productid=books.book_isbn";
+
+         $result = mysqli_query($conn,$query);
+
+         if(mysqli_num_rows($result)!= 0){
+         echo '	<br><br><br><h4>Your Purchase History</h4>   
+         
+         <table class="table">
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Date</th>
+            </tr>';
+               for($i = 0; $i < mysqli_num_rows($result); $i++){
+                   
+                   while($query_row = mysqli_fetch_assoc($result)){
+                       echo '<tr>
+                       <td>
+                       <a href="book.php?bookisbn=';
+                       echo $query_row['book_isbn'];
+                       echo '">';
+                       echo '<img style="height:100px;width:80px"class="img-responsive img-thumbnail" src="./bootstrap/img/';
+                       echo $query_row['book_image'];
+                       echo '">';
+                       echo ' </a>
+                       </td>
+                       <td>';
+                       echo $query_row['quantity'];
+                       echo '
+                       </td>
+                       <td>';
+                       echo $query_row['date'];
+                       echo'
+                       </td>
+                       </tr>';
+                   }
+               }
+               echo '</table>';
+        }
+    }
 ?>
 <?php
     if (isset($conn)){
         mysqli_close($conn);
     }
 
-    // include "./template/footer.php";
+    include "./template/footer.php";
 ?>

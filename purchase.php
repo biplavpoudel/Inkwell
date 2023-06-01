@@ -1,17 +1,13 @@
 <?php
     session_start();
-    $title = "Checkout";
+    $title = "Purchase";
 
     include "./functions/db_functions.php";
-    include "./template/header.php";
-
-    if (!isset($_SESSION['user'])){
-        echo '<div class="alert alert-danger" role="alert">
-        You need to <a href="signin.php">Signin</a> first!
-        </div>';
-    }
+    // $conn = db_connect();
+    require_once "./template/header.php";
 
     if (isset($_SESSION['cart']) && array_count_values($_SESSION['cart'])){
+        $customer = getCustomerInfobyEmail($_SESSION['email']);
 ?> 
     <div class="container" style="padding:100px;">
         <table class="table table-bordered align-middle">
@@ -47,28 +43,7 @@
                 </tr>
             </tbody>
         </table>
-        
-        <?php 
-		if(isset($_SESSION['user'])){
-			echo '<form method="post" action="purchase.php" class="form-horizontal">
-			    <div class="form-group" style="margin-left:0px">
-			    	<input type="submit" name="submit" value="Purchase" class="btn btn-info" >
-			    	<a href="cart.php" class="btn btn-info">Edit Cart</a> 
-			    </div>
-		    </form>
-            <br/>
-		    <div><p class="text-muted">Please press <text class="text-info">Purchase</text> to confirm your purchase, or <text class="text-info">Edit Cart</text> to add or remove items.</p></div>';
-		}
-	    ?>
     </div>
 
-    <?php
-	}
-    else {
-		echo "<p class=\"text-warning\">Your cart is empty! Please make sure you add some books in it!</p>";
-	}
-
-    if(isset($conn)){ mysqli_close($conn); }
-    include "./template/footer.php";
-
-    ?>
+<?php }
+?>
