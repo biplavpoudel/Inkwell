@@ -88,9 +88,9 @@
     
 
 
-<hr style="margin:0 0 1px 0">
+<hr style="margin:0 0 1px 0;">
 <!--Quicklinks  -->
-<div id="footer" class="container-flex" style="background-color: aliceblue; padding-top:30px; padding-left:200px; line-height:0.8em;">
+<div id="footer" class="container-flex" style="background-color:aliceblue; padding-top:50px; padding-left:200px; line-height:0.8em;">
   <footer class="py-6">
     <div class="row">
       <div class="col-6 col-md-2 mb-4">

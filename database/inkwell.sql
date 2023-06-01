@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2023 at 10:34 AM
+-- Generation Time: Jun 01, 2023 at 06:20 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -96,10 +96,7 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `customerid`, `date`) VALUES
-(23, 7, '2019-07-05 15:21:55'),
-(24, 7, '2019-07-05 15:22:25'),
-(25, 7, '2019-07-05 15:22:55'),
-(26, 6, '2019-07-05 16:32:04');
+(28, 1, '2023-06-01 12:34:27');
 
 -- --------------------------------------------------------
 
@@ -122,7 +119,11 @@ INSERT INTO `cartitems` (`id`, `cartid`, `productid`, `quantity`) VALUES
 (24, 23, '978-0-321-94786-4', 1),
 (25, 23, '9781409178811', 1),
 (26, 23, '978-1-484217-26-9', 5),
-(27, 26, '978-1-44937-019-0', 10);
+(27, 26, '978-1-44937-019-0', 10),
+(28, 27, '978-0-321-94786-4', 1),
+(29, 28, '978-0060934347', 1),
+(30, 28, '978-0141439556', 1),
+(31, 28, '978-0743269513', 1);
 
 -- --------------------------------------------------------
 
@@ -169,15 +170,18 @@ CREATE TABLE `customers` (
   `password` varchar(40) NOT NULL,
   `address` varchar(120) NOT NULL,
   `city` varchar(40) NOT NULL,
-  `zipcode` varchar(40) NOT NULL
+  `zipcode` varchar(40) NOT NULL,
+  `cardnumber` int(11) DEFAULT NULL,
+  `expiry_date` date DEFAULT NULL,
+  `cvv` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`id`, `firstname`, `lastname`, `email`, `password`, `address`, `city`, `zipcode`) VALUES
-(1, 'Biplav', 'Poudel', 'biplavpoudel764@gmail.com', '007', 'New Road', 'Pokhara', '44600');
+INSERT INTO `customers` (`id`, `firstname`, `lastname`, `email`, `password`, `address`, `city`, `zipcode`, `cardnumber`, `expiry_date`, `cvv`) VALUES
+(1, 'Biplav', 'Poudel', 'biplavpoudel764@gmail.com', '007', 'New Road', 'Pokhara', '44600', 0, '0000-00-00', 0);
 
 -- --------------------------------------------------------
 
@@ -304,13 +308,13 @@ ALTER TABLE `publisher`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `cartitems`
 --
 ALTER TABLE `cartitems`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `category`

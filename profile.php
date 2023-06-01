@@ -92,6 +92,24 @@
                         <input class="form-control" type="text" value="<?php echo $customer['zipcode']?>" name="zipcode">
                     </div>
                 </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Card Number:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" value="<?php echo $customer['cardnumber']?>" name="cardnumber">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Expiry Date:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="date" value="<?php echo $customer['expiry_date']?>" name="expiry_date">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">CVV:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="password" value="<?php echo $customer['cvv']?>" name="cvv">
+                    </div>
+                </div>
                 <!-- <div class="form-group">
                     <label class="col-md-3 control-label">Profile Picture</label>
                     <div class="col-md-8">

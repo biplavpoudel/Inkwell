@@ -105,7 +105,7 @@
 <?php
     }
     else{
-        echo "<div style=\"padding:50px;\"><img class=\"img-fluid\" src=\"./bootstrap/img/empty_cart.png\" alt=\"empty\"  style=\"display:block; margin-left:auto; margin-right:auto; max-width:90%;\"></div>";
+        echo "<div style=\"padding:10px;\"><img class=\"img-fluid\" src=\"./bootstrap/img/empty_cart.png\" alt=\"empty\"  style=\"display:block; margin-left:auto; margin-right:auto; max-width:20%;\"></div>";
         echo '<script language="javascript">'; echo 'alert("Your cart is empty! Add your favourite books to the cart.")';
         echo '</script>';
     }
@@ -122,9 +122,9 @@
          $result = mysqli_query($conn,$query);
 
          if(mysqli_num_rows($result)!= 0){
-         echo '	<br><br><br><h4>Your Purchase History</h4>   
+         echo '	<br><br><br><h4 style="margin-left:100px;">Your Purchase History:</h4>   
          
-         <table class="table">
+         <table class="table table-bordered align-middle" style="margin-left:100px; max-width:60%; ">
             <tr>
                 <th>Item</th>
                 <th>Quantity</th>
@@ -154,7 +154,7 @@
                        </tr>';
                    }
                }
-               echo '</table>';
+            echo '</table>';
         }
     }
 ?>
