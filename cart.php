@@ -118,8 +118,16 @@
 
 
         // Something is wrong here. Purchase Date database ma correctly update vako xa. tara still retrieve garda sab vanda first data retrieve vayo. Join milena
-        $query = "SELECT * FROM cart join cartitems join books join customers
-            on customers.id='$customerid' and cart.customerid='$customerid' and cart.id=cartitems.cartid and  cartitems.productid=books.book_isbn";
+        //CARTID change navayera ho ki?????
+
+
+        // $query = "SELECT * FROM cart join cartitems join books join customers
+        //     on customers.id='$customerid' and cart.customerid='$customerid' and cart.id=cartitems.cartid and  cartitems.productid=books.book_isbn";
+        $query = "SELECT * FROM cart
+        JOIN cartitems ON cart.id = cartitems.cartid
+        JOIN books ON cartitems.productid = books.book_isbn
+        WHERE cart.customerid = '$customerid'";
+
 
          $result = mysqli_query($conn,$query);
 
