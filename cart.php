@@ -116,6 +116,8 @@
         $customer = getCustomerInfobyEmail($_SESSION['email']);
         $customerid = $customer['id'];
 
+
+        // Something is wrong here. Purchase Date database ma correctly update vako xa. tara still retrieve garda sab vanda first data retrieve vayo. Join milena
         $query = "SELECT * FROM cart join cartitems join books join customers
             on customers.id='$customerid' and cart.customerid='$customerid' and cart.id=cartitems.cartid and  cartitems.productid=books.book_isbn";
 

@@ -62,7 +62,7 @@
 //insert customerid and date into cart table    
 
     if (!function_exists("insertIntoCart")){
-        function insertIntoCart($conn, $customerid,$date){
+        function insertIntoCart($conn, $customerid, $date){
             $query = "INSERT INTO cart(customerid, date) VALUES('$customerid','$date') ";
             $result = mysqli_query($conn, $query);
             if(!$result){

@@ -41,7 +41,8 @@
 
 	mysqli_query($conn, $query);
 
-	$date = date("Y-m-d H:i:s");
+	$date = date("Y-m-d H:i:s");    //date ni majjale gayeko xa. tara retrieve garda error aayo "cart.php" ko Purchase History ma
+
 	// insertIntoOrder($conn, $customer['id'], $_SESSION['total_price'],$date);
 	insertIntoCart($conn, $customer['id'], $date);
 
