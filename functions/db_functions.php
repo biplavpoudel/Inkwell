@@ -54,10 +54,13 @@
                 echo "Retrieving data failed !" . mysqli_error($conn);
                 exit;
             }
-            $row = mysqli_fetch_assoc($result);
-            return $row['id'];
+            while ($row = mysqli_fetch_assoc($result)){           //how did this work???😂
+            	$id = $row['id'];
+			}
+			return $id;
         }
-    } 
+    }
+	
     
 //insert customerid and date into cart table    
 

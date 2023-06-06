@@ -41,6 +41,7 @@
 
 	mysqli_query($conn, $query);
 
+	date_default_timezone_set('Asia/Kathmandu');
 	$date = date("Y-m-d H:i:s");    //date ni majjale gayeko xa. tara retrieve garda error aayo "cart.php" ko Purchase History ma
 
 	// insertIntoOrder($conn, $customer['id'], $_SESSION['total_price'],$date);
@@ -48,11 +49,11 @@
 
 	// take orderid from order to insert order items
 	// $orderid = getOrderId($conn, $customer['id']);
-	$Cartid = getCartId($conn, $customer['id']);
 
+	$cartId = getCartId($conn, $customer['id']);   //how to fix this??? 
 	foreach($_SESSION['cart'] as $isbn => $qty){
 		$bookprice = getbookprice($isbn);
-		$query = "INSERT INTO cartItems(cartid, productid, quantity) VALUES ('$Cartid', '$isbn', '$qty')";
+		$query = "INSERT INTO cartitems(cartid, productid, quantity) VALUES ('$cartId', '$isbn', '$qty')";     //all cartitems are getting same cartid when the cartid is supposed to be different for different carts
 		$result = mysqli_query($conn, $query);
 		if(!$result){
 			echo "Insert value false!" . mysqli_error($conn);
@@ -60,8 +61,10 @@
 		}
 	}
 
-	unset($_SESSION['total_price']);
+
+
 	unset($_SESSION['cart']);
+	unset($_SESSION['total_price']);
 	unset($_SESSION['total_items']);
 
 ?>
@@ -78,5 +81,6 @@
 	if(isset($conn)){
 		mysqli_close($conn);
 	}
+
 	require_once "./template/footer.php";
 ?>
