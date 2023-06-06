@@ -118,7 +118,7 @@
 
 
         // Something is wrong here. Purchase Date database ma correctly update vako xa. tara still retrieve garda sab vanda first data retrieve vayo. Join milena
-        //CARTID change navayera ho ki?????
+        // Reason: cart ma different cartid xa tara cartitems ma all items have same cartid
 
 
         // $query = "SELECT * FROM cart join cartitems join books join customers
