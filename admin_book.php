@@ -50,8 +50,8 @@
 				<td><?php echo $row['book_price']; ?></td>
 				<td><?php echo getPubName($conn, $row['publisherid']); ?></td>
 				<td><?php echo getCatName($conn, $row['categoryid']); ?></td>
-    	        <td><a href="admin_edit.php?bookisbn=<?php echo $row['book_isbn']?>"><span class="glyphicon glyphicon-pencil" style="display:inline"></span>&nbsp;Edit</a></td>
-    	        <td><a href="admin_delete.php?bookisbn=<?php echo $row['book_isbn']?>"><span class="glyphicon glyphicon-trash" style="display:inline"></span>&nbsp;Delete</a></td>
+    	        <td><a style="color:dodgerblue" href="admin_edit.php?bookisbn=<?php echo $row['book_isbn']?>"><span class="glyphicon glyphicon-pencil" style="display:inline"></span>&nbsp;Edit</a></td>
+    	        <td><a style="color:dodgerblue" href="admin_delete.php?bookisbn=<?php echo $row['book_isbn']?>"><span class="glyphicon glyphicon-trash" style="display:inline"></span>&nbsp;Delete</a></td>
 
 			</tr>
 			<?php } ?>
