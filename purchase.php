@@ -165,6 +165,6 @@
         mysqli_close($conn);
     }
 
-    require_once("./template/footer.php");
+    // require_once("./template/footer.php");
 
 ?>
