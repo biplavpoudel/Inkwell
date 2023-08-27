@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 27, 2023 at 07:41 AM
+-- Generation Time: Aug 27, 2023 at 07:52 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -76,6 +76,7 @@ INSERT INTO `books` (`book_isbn`, `book_title`, `book_author`, `book_image`, `bo
 ('978-1-484217-26-9', 'GOOD NIGHT STORIES FOR REBEL GIRLS 2', 'Elena Favilli & Francesca Cavallo, Elena Favilli', 'goodnight stories for rebel girls.jpg', '100 new bedtime stories, each inspired by the life and adventures of extraordinary women from Nefertiti to Beyonce. The unique narrative style of \"Good Night Stories for Rebel Girls\" transforms each biography in a fairy-tale, filling the readers with wonder and with a burning curiosity to know more about each hero.', 49.99, 7, 2),
 ('978-1400052189', 'The Immortal Life of Henrietta Lacks', 'Rebecca Skloot', 'immortallifeof.jpg', '\"The Immortal Life of Henrietta Lacks\" is a nonfiction book that tells the story of Henrietta Lacks, a woman whose cells were taken without her knowledge in 1951 and used in medical research, leading to numerous scientific breakthroughs. The book explores the ethical implications of medical research and the impact of race and class on healthcare in America. Skloot\'s book has been praised for its blend of scientific and personal storytelling and has sold over 2.5 million copies worldwide.', 9.49, 23, 9),
 ('978-1577314806', 'The Power of Now', 'Eckhart Tolle', 'powerofnow.jpg', '\"The Power of Now\" is a spiritual guidebook that encourages readers to live in the present moment. Tolle argues that the mind\'s tendency to dwell on the past or worry about the future can lead to anxiety and suffering, and he provides practical tools for achieving inner peace and happiness. The book has sold over 3 million copies worldwide and has been translated into 33 languages', 8.89, 25, 9),
+('978-9384225483', 'The Old Man and Sea', 'Ernest Hemingway', 'oldman.jpg', 'For old man Santiago, catching the biggest Marlin in the deep sea has become an obsession. But even after 84 days at sea, the deprived old man is unable to break the bad luck that seems to be following him around. While the whole village of fishermen has given up on him, it’s only his young Apprentice, Manolin, who supports his passion, but he too is forbidden by his parents to accompany the old man into the sea.The 85th day changes everything. Alone, for the next three days, Santiago fights with the forces of nature and with the shortcomings on by his old age in search of the great catch.One of Ernest Hemingway best works, the old man and the sea, explores the themes of mortality, honour-in-defeat and man’s place nature.', 17.95, 26, 15),
 ('9780575081406', 'The Name of the Wind (The Kingkiller Chronicle Book 1)', 'Patrick Rothfuss', 'the name of the wind.jpg', 'The Name of the Wind is fantasy at its very best, and an astounding must-read title.\r\n\r\nI have stolen princesses back from sleeping barrow kings. I burned down the town of Trebon. I have spent the night with Felurian and left with both my sanity and my life. I was expelled from the University at a younger age than most people are allowed in. I tread paths by moonlight that others fear to speak of during day. I have talked to Gods, loved women, and written songs that make the minstrels weep.\r\n\r\nMy name is Kvothe.\r\n\r\nYou may have heard of me\r\n\r\nSo begins the tale of Kvothe - currently known as Kote, the unassuming innkeepter - from his childhood in a troupe of traveling players, through his years spent as a near-feral orphan in a crime-riddled city, to his daringly brazen yet successful bid to enter a difficult and dangerous school of magic. In these pages you will come to know Kvothe the notorious magician, the accomplished thief, the masterful musician, the dragon-slayer, the legend-hunter, the lover, the thief and the infamous assassin.\r\n\r\nThe Name of the Wind is fantasy at its very best, and an astounding must-read title.', 19.99, 7, 1),
 ('9781409178811', 'Broken Throne', 'Victoria Aveyard', 'broken throne.jpg', 'The stunning sequel to Sarah J. Maas New York Times bestselling A Court of Thorns and Roses and a No.1 New York Times bestseller.Feyre survived Amaranthas clutches to return to the Spring Court - but at a steep cost. Though she now has the powers of the High Fae, her heart remains human, and it cant forget the terrible deeds she performed to save Tamlins people.Nor has Feyre forgotten her bargain with Rhysand, High Lord of the feared Night Court. As Feyre navigates its dark web of politics, passion, and dazzling power, a greater evil looms - and she might be key to stopping it. But only if she can harness her harrowing gifts, heal her fractured soul, and decide how she wishes to shape her future - and the future of a world cleaved in two.With more than a million copies sold of her beloved Throne of Glass series, Sarah J. Maass masterful storytelling brings this second book in her seductive and action-packed series to new heights. Older teens will love A Court of Mist and Fury.Contains mature content. Not suitable for younger readers.', 17.99, 10, 2);
 
@@ -96,7 +97,8 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `customerid`, `date`) VALUES
-(28, 1, '2023-06-01 12:34:27');
+(28, 1, '2023-06-01 12:34:27'),
+(29, 1, '2023-08-27 05:49:55');
 
 -- --------------------------------------------------------
 
@@ -123,7 +125,9 @@ INSERT INTO `cartitems` (`id`, `cartid`, `productid`, `quantity`) VALUES
 (28, 27, '978-0-321-94786-4', 1),
 (29, 28, '978-0060934347', 1),
 (30, 28, '978-0141439556', 1),
-(31, 28, '978-0743269513', 1);
+(31, 28, '978-0743269513', 1),
+(32, 29, '978-0141439518', 3),
+(33, 29, '978-9384225483', 5);
 
 -- --------------------------------------------------------
 
@@ -154,7 +158,8 @@ INSERT INTO `category` (`categoryid`, `category_name`) VALUES
 (11, 'Magic Realism'),
 (12, 'Poetry'),
 (13, 'Autobiography'),
-(14, 'Bildungsroman');
+(14, 'Bildungsroman'),
+(15, 'Allegory');
 
 -- --------------------------------------------------------
 
@@ -181,7 +186,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `firstname`, `lastname`, `email`, `password`, `address`, `city`, `zipcode`, `cardnumber`, `expiry_date`, `cvv`) VALUES
-(1, 'Biplav', 'Poudel', 'biplavpoudel764@gmail.com', '007', 'New Road', 'Pokhara', '44600', 0, '0000-00-00', 0);
+(1, 'Biplav', 'Poudel', 'biplavpoudel764@gmail.com', '007', 'New Road', 'Pokhara', '44600', 123456789, '2023-08-29', 0);
 
 -- --------------------------------------------------------
 
@@ -258,7 +263,8 @@ INSERT INTO `publisher` (`publisherid`, `publisher_name`) VALUES
 (22, 'Harper'),
 (23, 'Crown'),
 (24, 'Pearson'),
-(25, 'New World Library');
+(25, 'New World Library'),
+(26, 'Om Illustrated Classic');
 
 --
 -- Indexes for dumped tables
@@ -320,19 +326,19 @@ ALTER TABLE `publisher`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `cartitems`
 --
 ALTER TABLE `cartitems`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `categoryid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `categoryid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `customers`
@@ -344,7 +350,7 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `publisher`
 --
 ALTER TABLE `publisher`
-  MODIFY `publisherid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `publisherid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
