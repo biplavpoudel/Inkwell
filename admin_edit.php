@@ -29,6 +29,7 @@
 	}
 	$row = mysqli_fetch_assoc($result);
 ?>
+<div class="container" style="margin:15px;">
 	<form method="post" action="edit_book.php" enctype="multipart/form-data">
 		<table class="table">
 			<tr>
@@ -69,6 +70,7 @@
 	</form>
 	<br/>
 	<a href="admin_book.php" class="btn btn-success">Confirm</a>
+</div>
 <?php
 	if(isset($conn)) {mysqli_close($conn);}
 	require "./template/footer.php"
